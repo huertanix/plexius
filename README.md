@@ -1,12 +1,12 @@
 Plexius
 =======
 
-Plexius is an open hardware lifecam system for Flickr I built while waiting for Narrative to launch. It combines the familiar aesthetic of older forms of wearable technology (traditional cameras with neckstraps) with DIY open hardware futurism. It also takes a photo every minute and uploads it to Flickr via wifi.
+Plexius is an open hardware lifecam system for Flickr I'm building while waiting for Narrative to launch. It combines the familiar look of older forms of wearable technology (traditional cameras with neck straps) with a DIY open hardware aesthetic. It also takes a photo every minute and uploads it to Flickr via wifi.
 
 Dependencies
 ============
 
-For the Plexius script, you'll want these things:
+For the Plexius code, you'll want these things:
 * Ruby 1.9
 * flickraw gem
 
@@ -15,7 +15,7 @@ For the Plexius case, you'll want these:
 * Access to a laser cutter
 * Patience
 
-A full BOM for open hardware used is included (bom.md)
+A full BOM for open hardware used is included (BOM.md)
 
 Install
 =======
@@ -29,6 +29,10 @@ To install/configure the raspberry pi camera with your pi, follow the instructio
 http://www.raspberrypi.org/camera
 
 The camera install steps assume Raspbian, but other Linux distros like Arch might work too, try them out!
+
+You'll want some form of wifi to use to upload photos to The Cloud. You can configure your raspi to use a specific wifi AP like so:
+
+
 
 License
 =======
