@@ -32,7 +32,19 @@ The camera install steps assume Raspbian, but other Linux distros like Arch migh
 
 You'll want some form of wifi to use to upload photos to The Cloud. You can configure your raspi to use a specific wifi AP like so:
 
+Change your /etc/network/interfaces on the raspi to look like this:
 
+    auto lo
+
+    iface lo inet loopback
+    iface eth0 inet dhcp
+
+    allow-hotplug wlan0
+    iface wlan0 inet manual
+    wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+    iface default inet dhcp
+    wpa-ssid "accesspointname"
+    wpa-psk "accesspointpassphrase"
 
 License
 =======

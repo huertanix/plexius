@@ -45,7 +45,7 @@ module front_box() {
 	union() {
 		minkowskiRect([70, 125, 20], 5, true);
 
-		// Create the 10mm inner lip (no idea wtf to call anything not a mecha engineer)
+		// Create the 10mm long inner lip (no idea wtf to call anything not a mecha engineer)
 		// translate is being totally ignored
 		translate(5,5,10) {
 			minkowskiRect([65, 120, 30], 5, true);
