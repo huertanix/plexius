@@ -1,15 +1,9 @@
-require 'flickraw'
-
-#flickr = FlickRaw::Flickr.new
-# ugh oauth
-
 loop do
   raspi_user = "pi"
   unixtime = Time.now.to_i
 
-  if system "raspistill -o /home/#{raspi_user}/plexius/#{unixtime}.jpg"
-    # Upload to ~THE CLOUD~
-
+  if system "raspistill -ISO 800 -rot 180 -o /home/#{raspi_user}/plexius/#{unixtime}.jpg"
+    puts "#{unixtime}.jpg saved!"
   else
     puts "ROFLCOPTER DOWN!"
   end
