@@ -1,6 +1,6 @@
 #!/bin/sh
-PIX_DIR=/home/huertanix/pix/
-TMP_DIR=/home/huertanix/tmp/
+PIX_DIR=/home/pi/pix/
+TMP_DIR=/home/pi/tmp/
 
 echo 'making a HARD G gif'
 
