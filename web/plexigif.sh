@@ -8,7 +8,7 @@ cp $PIX_DIR* $TMP_DIR
 
 for file in $TMP_DIR*; do
   echo "processing $file"
-  convert $file -resize 800 -rotate '90' -quality 80 $file;
+  convert $file -resize 600 -rotate '90' -quality 75 $file;
 done
 
 rm life.gif
