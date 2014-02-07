@@ -4,7 +4,7 @@ Plexius
 Plexius is an open hardware lifecam system for Flickr I'm building while waiting for Narrative to launch. It combines the familiar look of older forms of wearable technology (traditional cameras with neck straps) with a DIY open hardware aesthetic. It also takes a photo every minute and uploads it to Flickr via wifi.
 
 Dependencies
-============
+------------
 
 For the Plexius code, you'll want these things:
 * Ruby 1.9
@@ -18,7 +18,7 @@ For the Plexius case, you'll want these:
 A full BOM for open hardware used is included (BOM.md)
 
 Install
-=======
+-------
 
 If you don't yet have Raspbian installed on an SD card for your Raspi, instructions for doing that (in Linux) are here: 
 
@@ -47,6 +47,10 @@ Change your /etc/network/interfaces on the raspi to look like this:
     wpa-psk "accesspointpassphrase"
 
 License
-=======
+-------
 
-lolwut
+Unless where otherwise noted, this application's software is distributed under the Chicken Dance License (CDL). Please see the included copy of the license (CDL-LICENSE.txt) for deets and the included example instructions for the chicken dance (DANCE.txt). Video delivery may be conducted via electronic mail by sending a link to the video file directly or through an HTML5-based online viewer, encoded in *Ogg Theora* format to huertanix at ieee dot org. Physical video delivery will only be accepted in *HD-DVD* format and must be delivered to the following address:
+
+> David Huerta  
+> P.O. Box 2182  
+> Tempe, Arizona 85280-2182  
