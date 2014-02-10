@@ -1,14 +1,13 @@
 Plexius
 =======
 
-Plexius is an open hardware lifecam system for Flickr I'm building while waiting for Narrative to launch. It combines the familiar look of older forms of wearable technology (traditional cameras with neck straps) with a DIY open hardware aesthetic. It also takes a photo every minute and uploads it to Flickr via wifi.
+Plexius is an open hardware lifecam system I'm building while waiting for Narrative to launch. It combines the familiar look of older forms of wearable technology (traditional cameras with neck straps) with a DIY open hardware aesthetic. It also takes a photo every minute and uploads it to the server of your choice via wifi and rsync.
 
 Dependencies
 ------------
 
 For the Plexius code, you'll want these things:
 * Ruby 1.9
-* flickraw gem
 
 For the Plexius case, you'll want these:
 * Access to a 3D printer
@@ -19,6 +18,8 @@ A full BOM for open hardware used is included (BOM.md)
 
 Install
 -------
+
+For the server, if you want to store photos, you'll want to make a "pix" directory in the home directory of the user you want to connect as.
 
 If you don't yet have Raspbian installed on an SD card for your Raspi, instructions for doing that (in Linux) are here: 
 
@@ -32,19 +33,41 @@ The camera install steps assume Raspbian, but other Linux distros like Arch migh
 
 You'll want some form of wifi to use to upload photos to The Cloud. You can configure your raspi to use a specific wifi AP like so:
 
-Change your /etc/network/interfaces on the raspi to look like this:
+Change your /etc/wpa_supplicant/wpa_supplicant.conf on the raspi to look like this, but with your wifi connection's ssid and passphrase:
 
-    auto lo
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
 
-    iface lo inet loopback
-    iface eth0 inet dhcp
+    network={
+        ssid="NYCR24"
+        psk="clubmate"
+        key_mgmt=WPA-PSK
+    }
 
-    allow-hotplug wlan0
-    iface wlan0 inet manual
-    wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
-    iface default inet dhcp
-    wpa-ssid "accesspointname"
-    wpa-psk "accesspointpassphrase"
+After wifi is set up you can use a bunch of uber leet haxor commands to reload the wifi config, or you can reboot the pi, thus reloading the wifi config with:
+
+    sudo reboot
+
+You can verify whether wifi works or not by pinging your favorite website:
+
+    ping www.flyingsexsnak.es
+
+Once wifi is working, you'll want to configure up the plexiupload script to use the IP address of the place you server you plan to upload to instead of mine. Instructions on how to set up certificate-based authentication can be found here:
+
+    http://www.jveweb.net/en/archives/2010/08/passwordless-ssh-using-digital-signatures.html
+
+Next, plexicheese.rb script to run on startup and plexiupload to run every hour by adding it to the pi user's crontab:
+
+    crontab -e
+
+In your crontab, add these lines at the end:
+
+    @reboot ruby /home/pi/plexius/raspi/plexicheese.rb
+    @hourly /home/pi/plexius/raspi/plexiupload.sh
+
+Documentation exists for how to connect to the raspi to the camer and the LiPo Rider Pro to the Lipo battery in various pitstops of the Information Superhighway, so I won't dive into that here.
+
+Once everything is connected, you can wear the camera around and show the internet how cool your daily life is.
 
 License
 -------
