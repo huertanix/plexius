@@ -19,7 +19,7 @@ A full BOM for open hardware used is included (BOM.md)
 Install
 -------
 
-For the server, if you want to store photos, you'll want to make a "pix" directory in the home directory of the user you want to connect as.
+For the server, if you want to store photos, you'll want to make a "pix" directory in the home directory of the user you want to connect as ("pi" is the default raspberry pi user and the existing scripts default to it).
 
 If you don't yet have Raspbian installed on an SD card for your Raspi, instructions for doing that (in Linux) are here: 
 
@@ -52,7 +52,11 @@ You can verify whether wifi works or not by pinging your favorite website:
 
     ping www.flyingsexsnak.es
 
-Once wifi is working, you'll want to configure up the plexiupload script to use the IP address of the place you server you plan to upload to instead of mine. Instructions on how to set up certificate-based authentication can be found here:
+Once wifi is working, you'll want to git clone this repository. To keep this simple we'll do this from the root directory:
+
+    git clone https://github.com/huertanix/plexius.git
+
+In the raspi directory of the cloned repository, configure up the plexiupload script to use the IP address of the place you server you plan to upload to instead of mine. Instructions on how to set up certificate-based authentication can be found here:
 
     http://www.jveweb.net/en/archives/2010/08/passwordless-ssh-using-digital-signatures.html
 
