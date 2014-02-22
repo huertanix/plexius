@@ -52,7 +52,7 @@ You can verify whether wifi works or not by pinging your favorite website:
 
     ping www.flyingsexsnak.es
 
-Once wifi is working, you'll want to git clone this repository. To keep this simple we'll do this from the root directory:
+Once wifi is working, you'll want to git clone this repository. To keep this simple we'll do this from /home/pi :
 
     git clone https://github.com/huertanix/plexius.git
 
