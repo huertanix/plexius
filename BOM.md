@@ -12,7 +12,8 @@ MicroSD Raspbian Card*   |  1  |       $9.95 | http://www.adafruit.com/products/
 LiPo Rider Pro           |  1  |      $14.95 | http://www.seeedstudio.com/depot/lipo-rider-pro-p-992.html?cPath=1_75
 Open Hardware Pushbutton |  1  |       $7.92 | http://www.seeedstudio.com/depot/turn-on-open-hardware-metal-push-button-with-osh-logo-p-1335.html?cPath=85_50
 Momentary Pushbutton     |  1  |       €7.90 | http://www.segor.de/#Q%3DGQ12IP65-Edelstahl%26M%3D1
+330 Ohm Resistor         |  1  |       $1.49 | http://www.radioshack.com/product/index.jsp?productId=2062319
 
 * If you have leet dd skillz you can use a higher-capacity SD card (recommended) and dd a raspbian image to the card: http://n00blab.com/how-to-create-raspberry-pi-sd-card/.
 
-*TODO*: Add plexiglass, PLA, wires and two screws which attach the Pi to the backplate. Maybe also rubber bands, lanyard...
+*TODO*: Add plexiglass, PLA, cables and two screws which attach the Pi to the backplate. Maybe also rubber bands, lanyard...
