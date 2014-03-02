@@ -60,10 +60,10 @@ difference() {
 	minkowskiRect([55, 110, 22], 5, true); //inner hole (smaller void)
 	// Do the same but by having the hole shape stick out the bottom
 	translate(0,0,30) {
-		minkowskiRect([60, 115, 18], 5, true); //outer hole (larger void) that makes the front edge happen
+		minkowskiRect([60, 115, 18], 5, true); //outer hole (larger void) that makes the lip happen
 	}
 	// Power switch has an 8mm radius
-	button_hole(-42, 90, 8);
-	// Same for manual override aka shutter release
 	button_hole(42, 90, 8);
+	// 6mm radius for manual override aka shutter release
+	button_hole(-42, 90, 6);
 }

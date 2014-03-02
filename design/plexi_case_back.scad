@@ -63,7 +63,7 @@ difference() {
 		roundedRectHole([65, 120, 18], 5, true);
 	}
 	// Power switch has an 8mm radius
-	//power_hole(-42, 90, 8);
-	// Same for manual override
 	power_hole(42, 90, 8);
+	// Manual override has 6mm radius
+	power_hole(-42, 90, 6);
 }
