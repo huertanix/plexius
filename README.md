@@ -8,6 +8,7 @@ Dependencies
 
 For the Plexius raspi code, you'll want these things:
 * Ruby 1.9
+* ruby-dev
 * OpenSSH
 * wiringpi gem
 
