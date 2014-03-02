@@ -8,11 +8,11 @@ Short MicroSD adapter    |  1  |       $5.95 | http://www.adafruit.com/products/
 Raspberry Pi Camera      |  1  |      $29.95 | http://www.adafruit.com/products/1367
 NeoPixel Ring - 16       |  1  |       $9.95 | http://www.adafruit.com/products/1463
 Battery - 3.7v 2500mAh   |  1  |      $14.95 | http://www.adafruit.com/products/328
-Blue LED Pushbutton      |  1  |       $4.95 | http://www.adafruit.com/products/481
 MicroSD Raspbian Card*   |  1  |       $9.95 | http://www.adafruit.com/products/1121
 LiPo Rider Pro           |  1  |      $14.95 | http://www.seeedstudio.com/depot/lipo-rider-pro-p-992.html?cPath=1_75
 Open Hardware Pushbutton |  1  |       $7.92 | http://www.seeedstudio.com/depot/turn-on-open-hardware-metal-push-button-with-osh-logo-p-1335.html?cPath=85_50
+Momentary Pushbutton     |  1  |       €7.90 | http://www.segor.de/#Q%3DGQ12IP65-Edelstahl%26M%3D1
 
 * If you have leet dd skillz you can use a higher-capacity SD card (recommended) and dd a raspbian image to the card: http://n00blab.com/how-to-create-raspberry-pi-sd-card/.
 
-TODO: Add plexiglass, PLA, wires and two screws which attach the Pi to the backplate. Maybe also rubber bands, lanyard...
+*TODO*: Add plexiglass, PLA, wires and two screws which attach the Pi to the backplate. Maybe also rubber bands, lanyard...

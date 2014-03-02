@@ -95,18 +95,19 @@ Once wifi is working, you'll want to git clone this repository. To keep this sim
 
     git clone https://github.com/huertanix/plexius.git
 
-In the raspi directory of the cloned repository, configure up the plexiupload script to use the IP address of the place you server you plan to upload to instead of mine.
+In the raspi directory of the cloned repository, configure up the plexiupload.sh script to use the IP address of the place you server you plan to upload to instead of mine.
 
-Next, plexicheese.rb script to run on startup and plexiupload to run every hour by adding it to the pi user's crontab:
+Next, plexicore.rb script to run on startup, plexicheese.rb to run every minute and plexiupload.sh to run every hour by adding it to the raspi pi user crontab:
 
     crontab -e
 
 In your crontab, add these lines at the end:
 
-    @reboot ruby /home/pi/plexius/raspi/plexicheese.rb
+    @reboot ruby /home/pi/plexius/raspi/plexicore.rb
+    */1 * * * * ruby /home/pi/plexius/raspi/plexicheese.rb
     @hourly /home/pi/plexius/raspi/plexiupload.sh
 
-Documentation exists for how to connect to the raspi to the camer and the LiPo Rider Pro to the Lipo battery in various pitstops of the Information Superhighway, so I won't dive into that here.
+Documentation exists for how to connect to the raspi to the camera and the LiPo Rider Pro to the Lipo battery in various pitstops of the Information Superhighway, so I won't dive into that here.
 
 Once everything is connected, you can wear the camera around and show the internet how cool your daily life is.
 
