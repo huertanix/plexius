@@ -59,9 +59,7 @@ difference() {
 	// Make the top of the hole shape stick out so that we know the surface is empty
 	roundedRectHole([55, 110, 22], 5, true);
 	// Do the same but by having the hole shape stick out the bottom
-	translate(0,0,-5) {
-		roundedRectHole([65, 120, 18], 5, true);
-	}
+	roundedRectHole([65, 120, 18], 5, true);
 	// Power switch has an 8mm radius
 	power_hole(42, 90, 8);
 	// Manual override has 6mm radius
