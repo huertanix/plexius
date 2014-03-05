@@ -21,20 +21,9 @@ module roundedRect(size, radius) {
 	}
 }
 
-module minkowskiRect(size, radius, center) {
-	x = size[0];
-	y = size[1];
-	z = size[2];
-
-	minkowski() {
-		cube([x-5,y-5,z], center);
-		cylinder(r=radius,h=z, center);
-	}
-}
-
 module button_hole(distance, rot, size) {
 	rotate(a = rot, v = [1, 100, 0]) {
-		translate([0, distance, 30]) {
+		translate([-20, distance, -40]) {
 			// Power switch is 34mm tall
 			cylinder(r = size, h = 34);
 		}
@@ -43,12 +32,12 @@ module button_hole(distance, rot, size) {
 
 module front_box() {
 	union() {
-		minkowskiRect([70, 125, 20], 5, true);
+		roundedRect([70, 125, 20], 5, true);
 
 		// Create the 10mm long inner lip (no idea wtf to call anything not a mecha engineer)
 		// translate is being totally ignored
 		translate(5,5,10) {
-			minkowskiRect([65, 120, 30], 5, true);
+			roundedRect([65, 120, 30], 5, true);
 		}
 	}
 }
@@ -57,13 +46,14 @@ module front_box() {
 difference() {
 	front_box();
 	// Make the top of the hole shape stick out so that we know the surface is empty
-	minkowskiRect([55, 110, 22], 5, true); //inner hole (smaller void)
+	roundedRect([55, 110, 32], 5, true); //inner hole (smaller void)
 	// Do the same but by having the hole shape stick out the bottom
-	translate(0,0,30) {
-		minkowskiRect([60, 115, 18], 5, true); //outer hole (larger void) that makes the lip happen
-	}
+	////translate(0,0,30) {
+		////roundedRect([60, 115, 18], 5, true); //outer hole (larger void) that makes the lip happen
+	////}
 	// Power switch has an 8mm radius
-	button_hole(42, 90, 8);
+	button_hole(-42, 90, 8);
 	// 6mm radius for manual override aka shutter release
-	button_hole(-42, 90, 6);
+	button_hole(42, 90, 6);
 }
+// cube.local password is root asm only
