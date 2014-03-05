@@ -44,16 +44,19 @@ module front_box() {
 
 // Two of these will be made, like bread on a sammich
 difference() {
-	front_box();
-	// Make the top of the hole shape stick out so that we know the surface is empty
-	roundedRect([55, 110, 32], 5, true); //inner hole (smaller void)
-	// Do the same but by having the hole shape stick out the bottom
-	////translate(0,0,30) {
-		////roundedRect([60, 115, 18], 5, true); //outer hole (larger void) that makes the lip happen
-	////}
-	// Power switch has an 8mm radius
-	button_hole(-42, 90, 8);
-	// 6mm radius for manual override aka shutter release
-	button_hole(42, 90, 6);
+	difference() {
+		front_box();
+		// Make the top of the hole shape stick out so that we know the surface is empty
+		roundedRect([55, 110, 32], 5, true); //inner hole (smaller void)
+	
+		// Power switch has an 8mm radius
+		button_hole(-42, 90, 8);
+		// 6mm radius for manual override aka shutter release
+		button_hole(42, 90, 6);
+	}
+	// Do the same but by having the hole shape stick out the top
+	translate(v=[0,0,2]) {
+		// 65 -2, 120 -2
+		roundedRect([63, 118, 30], 5); //outer hole (larger void) that makes the lip happen
+	}
 }
-// cube.local password is root asm only
