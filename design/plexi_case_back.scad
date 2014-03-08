@@ -55,11 +55,11 @@ module power_hole(distance, rot, size) {
 
 // Two of these will be made, like bread on a sammich
 difference() {
-	roundedRect([70, 125, 20], 5, true);
+	roundedRect([70, 115, 20], 5, true);
 	// Make the top of the hole shape stick out so that we know the surface is empty
-	roundedRectHole([55, 110, 22], 5, true);
+	roundedRectHole([55, 100, 22], 5, true);
 	// Do the same but by having the hole shape stick out the bottom
-	roundedRectHole([65, 120, 18], 5, true);
+	roundedRectHole([65, 110, 18], 5, true);
 	// Power switch has an 8mm radius
 	power_hole(42, 90, 8);
 	// Manual override has 6mm radius

@@ -32,12 +32,12 @@ module button_hole(distance, rot, size) {
 
 module front_box() {
 	union() {
-		roundedRect([70, 125, 20], 5, true);
+		roundedRect([70, 115, 20], 5, true);
 
 		// Create the 10mm long inner lip (no idea wtf to call anything not a mecha engineer)
 		// translate is being totally ignored
 		translate(5,5,10) {
-			roundedRect([65, 120, 30], 5, true);
+			roundedRect([65, 110, 30], 5, true);
 		}
 	}
 }
@@ -47,7 +47,7 @@ difference() {
 	difference() {
 		front_box();
 		// Make the top of the hole shape stick out so that we know the surface is empty
-		roundedRect([55, 110, 32], 5, true); //inner hole (smaller void)
+		roundedRect([55, 100, 32], 5, true); //inner hole (smaller void)
 	
 		// Power switch has an 8mm radius
 		button_hole(-42, 90, 8);
@@ -57,6 +57,6 @@ difference() {
 	// Do the same but by having the hole shape stick out the top
 	translate(v=[0,0,2]) {
 		// 65 -2, 120 -2
-		roundedRect([63, 118, 30], 5); //outer hole (larger void) that makes the lip happen
+		roundedRect([63, 108, 30], 5); //outer hole (larger void) that makes the lip happen
 	}
 }
