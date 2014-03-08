@@ -25,7 +25,12 @@ module button_hole(distance, rot, size) {
 	rotate(a = rot, v = [1, 100, 0]) {
 		translate([-20, distance, -40]) {
 			// Power switch is 34mm tall
-			cylinder(r = size, h = 34);
+			union() {
+				cylinder(r = size, h = 34);
+				translate([-size*2,-size,0]) {
+					cube(size = [size*2, size*2,34]);
+				}
+			}
 		}
 	}
 }
@@ -33,12 +38,8 @@ module button_hole(distance, rot, size) {
 module front_box() {
 	union() {
 		roundedRect([70, 115, 20], 5, true);
-
 		// Create the 10mm long inner lip (no idea wtf to call anything not a mecha engineer)
-		// translate is being totally ignored
-		translate(5,5,10) {
-			roundedRect([65, 110, 30], 5, true);
-		}
+		roundedRect([65, 110, 30], 5, true);
 	}
 }
 
@@ -48,11 +49,10 @@ difference() {
 		front_box();
 		// Make the top of the hole shape stick out so that we know the surface is empty
 		roundedRect([55, 100, 32], 5, true); //inner hole (smaller void)
-	
-		// Power switch has an 8mm radius
-		button_hole(-42, 90, 8);
-		// 6mm radius for manual override aka shutter release
-		button_hole(42, 90, 6);
+		// Power switch has an 8mm radius (.5 for threading)
+		button_hole(-42, 90, 8.5);
+		// 6mm radius for manual override aka shutter release (.5 for threading)
+		button_hole(42, 90, 6.5);
 	}
 	// Do the same but by having the hole shape stick out the top
 	translate(v=[0,0,2]) {
