@@ -82,7 +82,17 @@ Change your /etc/wpa_supplicant/wpa_supplicant.conf on the raspi to look like th
         key_mgmt=WPA-PSK
     }
 
-Older parts of the internet will tell you to edit /etc/network/interfaces, but the internet is full of lies and you should leave that file untouched.
+Older parts of the internet will tell you to edit /etc/network/interfaces, but the internet is full of lies and you should leave that file untouched. Just in case you edited your interfaces file anyway, this is what the default looks like:
+
+    auto lo
+
+    iface lo inet loopback
+    iface eth0 inet dhcp
+
+    allow-hotplug wlan0
+    iface wlan0 inet manual
+    wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+    iface default inet dhcp
 
 After wifi is set up you can use a bunch of uber leet haxor commands to reload the wifi config, or you can reboot the pi, thus reloading the wifi config with:
 
