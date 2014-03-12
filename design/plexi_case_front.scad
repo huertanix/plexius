@@ -22,7 +22,7 @@ module roundedRect(size, radius) {
 }
 
 module button_hole(distance, rot, size) {
-	rotate(a = rot, v = [1, 100, 0]) {
+	rotate(a = rot, v = [0, 100, 0]) {
 		translate([-20, distance, -40]) {
 			// Power switch is 34mm tall
 			union() {
@@ -32,6 +32,12 @@ module button_hole(distance, rot, size) {
 				}
 			}
 		}
+	}
+}
+
+module wifi_hole() {
+	translate([-8,50,25]) {
+		cube(size=[16,20,5]);
 	}
 }
 
@@ -53,6 +59,7 @@ difference() {
 		button_hole(-42, 90, 8.5);
 		// 6mm radius for manual override aka shutter release (.5 for threading)
 		button_hole(42, 90, 6.5);
+		wifi_hole();
 	}
 	// Do the same but by having the hole shape stick out the top
 	translate(v=[0,0,2]) {
