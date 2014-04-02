@@ -10,7 +10,7 @@ For the Plexius raspi code, you'll want these things:
 * Ruby 1.9
 * ruby-dev
 * OpenSSH
-* wiringpi gem
+* PiPiper gem
 
 For the Plexius case, you'll want these:
 * Access to a 3D printer
@@ -20,6 +20,7 @@ For the Plexius case, you'll want these:
 For the server, you'll want:
 * Imagemagick
 * OpenSSH
+* Some kind of web server if you want to have pics online
 
 A full BOM for open hardware used is included (BOM.md)
 
