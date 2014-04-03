@@ -1,0 +1,70 @@
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  background-color:#333;
+  background: url(../img/life.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family:Helvetica, Arial, sans-serif;
+  text-align:center;
+  margin:0px auto;
+  width:915px;
+  height:100%;
+}
+
+.launchblock {
+  width:800px;
+  background-color:#000;
+  color:#fff;
+  height:auto;
+  max-height:800px;
+  padding:20px 20px 20px 20px;
+  text-align:left;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.launchblock .logocontainer {
+  text-align:center;
+}
+
+.launchblock .logocontainer h1 {
+  font-size:100px; 
+}
+
+.launchblock .logo {
+  /*width:300px;
+  height:300px;*/
+  padding-top:200px;
+}
+
+.launchblock a {
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+}
+
+.launchblock ul {
+  width:auto;
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+.launchblock ul li {
+  color:#000;
+  background-color:#FFF;
+  display: inline;
+  padding:5px;
+}
+
+.launchblock ul a {
+  text-decoration:none;
+  color:#000;
+  font-weight:bold;
+}
+
+.launchblock p {
+  text-align:center;
+  font-size:14px;
+}
