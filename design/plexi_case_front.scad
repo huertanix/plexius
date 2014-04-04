@@ -64,6 +64,12 @@ module wifi_hole() {
 	}
 }
 
+module usb_hole() {
+	translate([-5,-70,25]) {
+		cube(size=[10,20,5]);
+	}
+}
+
 module front_box() {
 	union() {
 		semiRoundedRect([70, 115, 20], 5, true);
@@ -83,6 +89,7 @@ difference() {
 		// 6mm radius for manual override aka shutter release (.5 for threading)
 		button_hole(42, 90, 6.5);
 		wifi_hole();
+		usb_hole();
 	}
 	// Do the same but by having the hole shape stick out the top
 	translate(v=[0,0,2]) {
