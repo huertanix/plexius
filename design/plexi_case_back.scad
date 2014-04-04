@@ -7,8 +7,11 @@ module roundedRect(size, radius) {
 	
 	hull() {
 	  // place 4 circles in the corners, with the given radius
+	  //translate([(-x/2)+(radius/2), (-y/2)+(radius/2), 0])
+	  //circle(r=radius);
+
 	  translate([(-x/2)+(radius/2), (-y/2)+(radius/2), 0])
-	  circle(r=radius);
+	  square([radius*2,radius*2], center=true);
 	
 	  translate([(x/2)-(radius/2), (-y/2)+(radius/2), 0])
 	  circle(r=radius);
@@ -17,7 +20,8 @@ module roundedRect(size, radius) {
 	  circle(r=radius);
 	
 	  translate([(x/2)-(radius/2), (y/2)-(radius/2), 0])
-	  circle(r=radius);
+	  square([radius*2,radius*2], center=true);
+
 	}
 }
 
