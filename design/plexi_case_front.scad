@@ -65,8 +65,8 @@ module wifi_hole() {
 }
 
 module usb_hole() {
-	translate([-5,-70,25]) {
-		cube(size=[10,20,5]);
+	translate([-6,-70,23]) {
+		cube(size=[12,20,7]);
 	}
 }
 
