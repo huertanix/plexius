@@ -21,6 +21,29 @@ module roundedRect(size, radius) {
 	}
 }
 
+module semiRoundedRect(size, radius){
+  x = size[0];
+  y = size[1];
+  z = size[2];
+
+  linear_extrude(height=z)
+	
+  hull() {
+    // place 4 circles in the corners, with the given radius
+    translate([(-x/2)+(radius/2), (-y/2)+(radius/2), 0])
+    square([radius*2,radius*2], center=true);
+	
+    translate([(x/2)-(radius/2), (-y/2)+(radius/2), 0])
+    circle(r=radius);
+	
+    translate([(-x/2)+(radius/2), (y/2)-(radius/2), 0])
+    circle(r=radius);
+	
+    translate([(x/2)-(radius/2), (y/2)-(radius/2), 0])
+    square([radius*2,radius*2], center=true);
+  }
+}
+
 module button_hole(distance, rot, size) {
 	rotate(a = rot, v = [0, 100, 0]) {
 		translate([-20, distance, -40]) {
@@ -41,9 +64,15 @@ module wifi_hole() {
 	}
 }
 
+module usb_hole() {
+	translate([-6,-70,23]) {
+		cube(size=[12,20,7]);
+	}
+}
+
 module front_box() {
 	union() {
-		roundedRect([70, 115, 20], 5, true);
+		semiRoundedRect([70, 115, 20], 5, true);
 		// Create the 10mm long inner lip (no idea wtf to call anything not a mecha engineer)
 		roundedRect([65, 110, 30], 5, true);
 	}
@@ -60,6 +89,7 @@ difference() {
 		// 6mm radius for manual override aka shutter release (.5 for threading)
 		button_hole(42, 90, 6.5);
 		wifi_hole();
+		usb_hole();
 	}
 	// Do the same but by having the hole shape stick out the top
 	translate(v=[0,0,2]) {
