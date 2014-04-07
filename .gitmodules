@@ -1,0 +1,3 @@
+[submodule "web/gallery"]
+	path = web/gallery
+	url = git://github.com/UberGallery/UberGallery.git
