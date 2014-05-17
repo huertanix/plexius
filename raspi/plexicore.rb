@@ -5,9 +5,12 @@ include PiPiper
 
 #pin_shutter = PiPiper::Pin.new(:pin => 24, :direction => :in, :pull => :up)
 
+plexius_raspi_dir = '/home/pi/plexius/raspi/'
+
 # It works, but maybe because the Python script reset something?
 after :pin => 24, :goes => :high do
   puts 'Button pressed!'
+  system 'ruby /home/pi/plexius/raspi/plexicheese.rb'
 end
 
 # Also works
