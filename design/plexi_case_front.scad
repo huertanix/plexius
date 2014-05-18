@@ -46,7 +46,7 @@ module semiRoundedRect(size, radius){
 
 module button_hole(distance, rot, size) {
 	rotate(a = rot, v = [0, 100, 0]) {
-		translate([-20, distance, -40]) {
+		translate([-18, distance, -40]) {
 			// Power switch is 34mm tall
 			union() {
 				cylinder(r = size, h = 34);
@@ -60,7 +60,7 @@ module button_hole(distance, rot, size) {
 
 module wifi_hole() {
 	translate([-8,50,25]) {
-		cube(size=[16,20,5]);
+		cube(size=[16,20,6]);
 	}
 }
 
@@ -72,9 +72,10 @@ module usb_hole() {
 
 module front_box() {
 	union() {
-		semiRoundedRect([65, 105, 20], 5, true);
+		// 28mm with lip
+		semiRoundedRect([65, 105, 18], 5, true);
 		// Create the 10mm long inner lip (no idea wtf to call anything not a mecha engineer)
-		roundedRect([60, 100, 30], 5, true);
+		roundedRect([60, 100, 28], 5, true);
 	}
 }
 
@@ -83,7 +84,7 @@ difference() {
 	difference() {
 		front_box();
 		// Make the top of the hole shape stick out so that we know the surface is empty
-		roundedRect([50, 90, 32], 5, true); //inner hole (smaller void)
+		roundedRect([50, 90, 30], 5, true); //inner hole (smaller void)
 		// Power switch has an 8mm radius (.5 for threading)
 		button_hole(-40, 90, 8.5);
 		// 6mm radius for manual override aka shutter release (.5 for threading)
@@ -92,8 +93,8 @@ difference() {
 		usb_hole();
 	}
 	// Do the same but by having the hole shape stick out the top
-	translate(v=[0,0,2]) {
-		// 65 -2, 120 -2
-		roundedRect([58, 98, 30], 5); //outer hole (larger void) that makes the lip happen
+	translate(v=[0,0,1]) {
+		// 65 -2, 120 -1
+		roundedRect([58, 98, 28], 5); //outer hole (larger void) that makes the lip happen
 	}
 }
