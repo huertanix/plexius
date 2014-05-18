@@ -74,15 +74,15 @@ module usb_hole() {
 
 // Two of these will be made, like bread on a sammich
 difference() {
-	roundedRect([70, 115, 20], 5, true);
+	roundedRect([65, 105, 20], 5, true);
 	// Make the top of the hole shape stick out so that we know the surface is empty
-	roundedRectHole([55, 100, 22], 5, true);
+	roundedRectHole([50, 90, 22], 5, true);
 	// Do the same but by having the hole shape stick out the bottom
-	roundedRectHole([65, 110, 18], 5, true);
+	roundedRectHole([60, 100, 18], 5, true);
 	// Power switch has an 8mm radius (.5 for threading)
-	power_hole(42, 90, 8.5);
+	power_hole(40, 90, 8.5);
 	// Manual override has 6mm radius (.5 for threading)
-	power_hole(-42, 90, 6.5);
+	power_hole(-40, 90, 6.5);
 	wifi_hole();
 	usb_hole();
 }
