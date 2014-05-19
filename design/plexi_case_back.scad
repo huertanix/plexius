@@ -58,8 +58,8 @@ module power_hole(distance, rot, size) {
 }
 
 module wifi_hole() {
-	translate([-8,-70,5]) {
-		cube(size=[16,20,6]);
+	translate([-8,-70,0]) {
+		cube(size=[16,20,11]);
 	}
 }
 
@@ -67,8 +67,8 @@ module usb_hole() {
 	difference() {
 		
 	}
-	translate([-6,50,3]) {
-		cube(size=[12,20,7]);
+	translate([-6,50,0]) {
+		cube(size=[12,20,10]);
 	}
 }
 
