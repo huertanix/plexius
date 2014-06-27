@@ -60,13 +60,13 @@ module button_hole(distance, rot, size) {
 
 module wifi_hole() {
 	translate([-8,50,23]) {
-		cube(size=[16,20,6]);
+		cube(size=[11,20,6]);
 	}
 }
 
 module usb_hole() {
 	translate([-6,-70,21]) {
-		cube(size=[12,20,7]);
+		cube(size=[11,20,7]);
 	}
 }
 
