@@ -64,11 +64,15 @@ module wifi_hole() {
 }
 
 module usb_hole() {
-	difference() {
-		
-	}
-	translate([-6,50,0]) {
+	translate([-6,34,0]) {
 		cube(size=[12,20,10]);
+	}
+}
+
+// each 
+module usb_inner_hole() {
+	translate([-4,50,0]) {
+		cube(size=[8,20,8]);
 	}
 }
 
@@ -86,4 +90,5 @@ difference() {
 	power_hole(-40, 90, 6.5);
 	wifi_hole();
 	usb_hole();
+	usb_inner_hole();
 }
